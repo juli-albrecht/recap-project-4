@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function ColorForm() {
+export function ColorForm({ onSubmitColor }) {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
@@ -18,20 +18,19 @@ export function ColorForm() {
           type="text"
           className="input-text"
           placeholder="some color"
-          id="role"
           name="role"
         />
         <label>Hex</label>
-        <ColorInput placeholder="#123456" />
+        <ColorInput placeholder="#123456" name="hex" />
         <label>Contrast Text</label>
-        <ColorInput placeholder="#ffffff" />
+        <ColorInput placeholder="#ffffff" name="contrastText" />
         <button>ADD COLOR</button>
       </form>
     </>
   );
 }
 
-function ColorInput({ placeholder, id, name }) {
+function ColorInput({ placeholder, name }) {
   const [inputColor, setInputColor] = useState();
 
   function handleColorInput(event) {
@@ -44,7 +43,6 @@ function ColorInput({ placeholder, id, name }) {
         type="text, color"
         placeholder={placeholder}
         name={name}
-        id={id}
         value={inputColor}
         onChange={handleColorInput}
       />
