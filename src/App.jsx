@@ -21,12 +21,21 @@ function ColorForm() {
   return (
     <form>
       <label>Role</label>
-      <input type="text" placeholder="some color" />
+      <input type="text" className="input-text" placeholder="some color" />
       <label>Hex</label>
-      <input type="text" placeholder="#123456" />
+      <ColorInput placeholder="#123456" />
       <label>Contrast Text</label>
-      <input type="text" placeholder="#ffffff" />
+      <ColorInput placeholder="#ffffff" />
     </form>
+  );
+}
+
+function ColorInput({ placeholder }) {
+  return (
+    <div className="input-and-color-picker">
+      <input type="text" placeholder={placeholder} />
+      <input type="color" />
+    </div>
   );
 }
 
