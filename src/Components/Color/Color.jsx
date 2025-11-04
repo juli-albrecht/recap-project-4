@@ -1,5 +1,6 @@
 import "./Color.css";
 import { DeleteButton } from "../../../components/DeleteButton";
+import { EditButton } from "../../../components/EditButton";
 
 export default function Color({ color, deleteColor }) {
   return (
@@ -19,6 +20,8 @@ export default function Color({ color, deleteColor }) {
           deleteColor(color.id);
         }}
       />
+
+      <EditButton />
     </div>
   );
 }
