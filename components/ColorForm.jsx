@@ -30,7 +30,7 @@ export function ColorForm({ onSubmitColor }) {
   );
 }
 
-function ColorInput({ placeholder, name }) {
+export function ColorInput({ placeholder, name }) {
   const [inputColor, setInputColor] = useState();
 
   function handleColorInput(event) {

@@ -2,7 +2,7 @@ import "./Color.css";
 import { DeleteButton } from "../../../components/DeleteButton";
 import { EditButton } from "../../../components/EditButton";
 
-export default function Color({ color, deleteColor }) {
+export default function Color({ color, deleteColor, updateColor }) {
   return (
     <div
       className="color-card"
@@ -21,7 +21,12 @@ export default function Color({ color, deleteColor }) {
         }}
       />
 
-      <EditButton />
+      <EditButton
+        editCallback={(updatedcolor) => {
+          console.log(updatedcolor);
+          updateColor(color.id, updatedcolor);
+        }}
+      />
     </div>
   );
 }

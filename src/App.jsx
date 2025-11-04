@@ -19,6 +19,15 @@ function App() {
     setColors(mutatedColors);
   }
 
+  function updateColor(id, newColorData) {
+    console.log(colors);
+    console.log(id, newColorData);
+    const newColors = colors.map((color) => {
+     return color.id === id ? { ...newColorData, id } : color;
+    });
+    setColors(newColors);
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
@@ -30,7 +39,12 @@ function App() {
       ) : (
         colors.map((color) => {
           return (
-            <Color key={color.id} color={color} deleteColor={deleteColor} />
+            <Color
+              key={color.id}
+              color={color}
+              deleteColor={deleteColor}
+              updateColor={updateColor}
+            />
           );
         })
       )}

@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { ColorInput } from "./ColorForm";
 
-export function EditButton() {
+export function EditButton({ editCallback }) {
   const [isEditmode, setIsEditmode] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    editCallback(data);
   }
 
   function handleCancel() {
@@ -23,15 +27,13 @@ export function EditButton() {
               placeholder="some color"
               name="role"
             />
-
             <label>Hex</label>
-            <input placeholder="#123456" name="hex" />
-
+            <ColorInput placeholder="#123456" name="hex" />
             <label>Contrast Text</label>
-            <input placeholder="#ffffff" name="contrastText" />
-
+            <ColorInput placeholder="#ffffff" name="contrastText" />
             <button type="submit">UPDATE COLOR</button>
           </form>
+
           <button
             type="button"
             aria-label="cancel delete button"
@@ -46,4 +48,3 @@ export function EditButton() {
     </>
   );
 }
-// musste null machen, weil leere Klammern nicht gingen
