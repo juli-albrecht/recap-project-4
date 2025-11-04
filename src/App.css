@@ -23,3 +23,9 @@ button {
   margin-bottom: 10px;
   margin-left: 10px;
 }
+
+.color-card-hightlight {
+  padding: 2px 6px;
+  background: black;
+  color: white;
+}

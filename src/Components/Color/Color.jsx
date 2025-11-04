@@ -1,6 +1,7 @@
 import "./Color.css";
+import { DeleteButton } from "../../../components/DeleteButton";
 
-export default function Color({ color }) {
+export default function Color({ color, deleteColor }) {
   return (
     <div
       className="color-card"
@@ -12,6 +13,12 @@ export default function Color({ color }) {
       <h3 className="color-card-headline">{color.hex}</h3>
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
+
+      <DeleteButton
+        deleteCallback={() => {
+          deleteColor(color.id);
+        }}
+      />
     </div>
   );
 }
