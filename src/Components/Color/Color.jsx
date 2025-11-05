@@ -26,6 +26,7 @@ export default function Color({ color, deleteColor, updateColor }) {
           console.log(updatedcolor);
           updateColor(color.id, updatedcolor);
         }}
+        color={color}
       />
     </div>
   );

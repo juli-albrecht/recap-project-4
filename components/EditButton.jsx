@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ColorInput } from "./ColorForm";
 
-export function EditButton({ editCallback }) {
+export function EditButton({ editCallback, color }) {
   const [isEditmode, setIsEditmode] = useState(false);
 
   function handleSubmit(event) {
@@ -24,13 +24,13 @@ export function EditButton({ editCallback }) {
             <input
               type="text"
               className="input-text"
-              placeholder="some color"
+              placeholder={color.role}
               name="role"
             />
             <label>Hex</label>
-            <ColorInput placeholder="#123456" name="hex" />
+            <ColorInput placeholder={color.hex} name="hex" />
             <label>Contrast Text</label>
-            <ColorInput placeholder="#ffffff" name="contrastText" />
+            <ColorInput placeholder={color.contrastText} name="contrastText" />
             <button type="submit">UPDATE COLOR</button>
           </form>
 
