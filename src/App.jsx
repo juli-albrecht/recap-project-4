@@ -29,6 +29,7 @@ function App() {
     setColors(newColors);
   }
 
+
   return (
     <>
       <h1>Theme Creator</h1>
@@ -49,8 +50,14 @@ function App() {
           );
         })
       )}
+
+<button 
+onClick={() => { setColors(initialColors)}}
+>Reload initialColors</button>
+
     </>
   );
 }
+
 
 export default App;
