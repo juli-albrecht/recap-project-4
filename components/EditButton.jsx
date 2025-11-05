@@ -1,8 +1,11 @@
-import { useState } from "react";
+
 import { ColorInput } from "./ColorForm";
+import useLocalStorageState from "use-local-storage-state";
+
 
 export function EditButton({ editCallback, color }) {
-  const [isEditmode, setIsEditmode] = useState(false);
+  const [isEditmode, setIsEditmode] = useLocalStorageState("isEditmode", { defaultValue: false });
+
 
   function handleSubmit(event) {
     event.preventDefault();
