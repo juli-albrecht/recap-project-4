@@ -18,12 +18,13 @@ export default function Color({ color, deleteColor, updateColor }) {
       <DeleteButton
         deleteCallback={() => {
           deleteColor(color.id);
+          console.log(color.id)
         }}
       />
 
       <EditButton
         editCallback={(updatedcolor) => {
-          console.log(updatedcolor);
+          // console.log(updatedcolor);
           updateColor(color.id, updatedcolor);
         }}
         color={color}

@@ -5,24 +5,25 @@ import { ColorForm } from "../components/ColorForm";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 
-function App() {
+export default function App() {
   const [colors, setColors] = useLocalStorageState("colors", { defaultValue: initialColors });
   
 
   function onSubmitColor(data) {
-    console.log(data);
+    // console.log(data);
     const id = uid();
     setColors([{ ...data, id }, ...colors]);
   }
 
   function deleteColor(colorID) {
+    console.log(colorID);
     const mutatedColors = colors.filter((color) => color.id !== colorID);
     setColors(mutatedColors);
   }
 
   function updateColor(id, newColorData) {
-    console.log(colors);
-    console.log(id, newColorData);
+    // console.log(colors);
+    // console.log(id, newColorData);
     const newColors = colors.map((color) => {
      return color.id === id ? { ...newColorData, id } : color;
     });
@@ -53,11 +54,10 @@ function App() {
 
 <button 
 onClick={() => { setColors(initialColors)}}
->Reload initialColors</button>
+>Reload initial colors</button>
 
     </>
   );
 }
 
 
-export default App;

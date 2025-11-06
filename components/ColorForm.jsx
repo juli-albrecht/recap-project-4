@@ -1,12 +1,14 @@
-import { useState } from "react";
+
+import { ColorInput } from "./ColorInput";
 
 export function ColorForm({ onSubmitColor }) {
+  
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    // console.log(data);
     onSubmitColor(data);
   }
 
@@ -30,23 +32,4 @@ export function ColorForm({ onSubmitColor }) {
   );
 }
 
-export function ColorInput({ placeholder, name }) {
-  const [inputColor, setInputColor] = useState();
 
-  function handleColorInput(event) {
-    setInputColor(event.target.value);
-  }
-
-  return (
-    <div className="input-and-color-picker">
-      <input
-        type="text, color"
-        placeholder={placeholder}
-        name={name}
-        value={inputColor}
-        onChange={handleColorInput}
-      />
-      <input type="color" value={inputColor} onChange={handleColorInput} />
-    </div>
-  );
-}

@@ -1,7 +1,6 @@
 
 import { useState } from "react";
-import { ColorInput } from "./ColorForm";
-
+import { ColorInput } from "./ColorInput";
 
 
 export function EditButton({ editCallback, color }) {
