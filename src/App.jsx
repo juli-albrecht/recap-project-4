@@ -15,13 +15,13 @@ export default function App() {
     setColors([{ ...data, id }, ...colors]);
   }
 
-  function deleteColor(colorID) {
+  function onDeleteColor(colorID) {
     console.log(colorID);
     const mutatedColors = colors.filter((color) => color.id !== colorID);
     setColors(mutatedColors);
   }
 
-  function updateColor(id, newColorData) {
+  function onUpdateColor(id, newColorData) {
     // console.log(colors);
     // console.log(id, newColorData);
     const newColors = colors.map((color) => {
@@ -43,10 +43,10 @@ export default function App() {
         colors.map((color) => {
           return (
             <Color
-              key={color.id}
+              // key={color.id}
               color={color}
-              deleteColor={deleteColor}
-              updateColor={updateColor}
+              onDeleteColor={onDeleteColor}
+              onUpdateColor={onUpdateColor}
             />
           );
         })

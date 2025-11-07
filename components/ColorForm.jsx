@@ -1,8 +1,7 @@
-
 import { ColorInput } from "./ColorInput";
 
 export function ColorForm({ onSubmitColor }) {
-  
+
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(event);
@@ -15,6 +14,7 @@ export function ColorForm({ onSubmitColor }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
+
         <label>Role</label>
         <input
           type="text"
@@ -22,11 +22,15 @@ export function ColorForm({ onSubmitColor }) {
           placeholder="some color"
           name="role"
         />
+
         <label>Hex</label>
         <ColorInput placeholder="#123456" name="hex" />
+
         <label>Contrast Text</label>
         <ColorInput placeholder="#ffffff" name="contrastText" />
+        
         <button>ADD COLOR</button>
+
       </form>
     </>
   );
